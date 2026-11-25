@@ -32,8 +32,10 @@ GAME_DURATION = 60 # Tempo em segundos para vencer (60s)
 
 # S
 SPAWN_TIME = 1200 # Tempo entre cada zumbi em milissegundos (1.2s)
-STREET_TOP_Y = 395 
 
 # W
 WIN_WIDTH = 900
 WIN_HEIGHT = 500
+
+# S
+STREET_TOP_Y = 395 
