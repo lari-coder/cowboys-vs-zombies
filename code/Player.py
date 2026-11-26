@@ -3,10 +3,10 @@ from code.Bullet import Bullet
 from code.Const import ENTITY_SPEED, STREET_TOP_Y, WIN_HEIGHT, WIN_WIDTH
 from code.Entity import Entity
 
+
 class Player(Entity):
     def __init__(self, posistion: tuple, scale: float = 1.5):
 
-        # Carrega a escala e pose parada do Player
         raw_idle = pygame.image.load('asset/cowgirl.png').convert_alpha()
         idle_size = (int(raw_idle.get_width() * scale), int(raw_idle.get_height() * scale))
 
@@ -14,7 +14,6 @@ class Player(Entity):
         self.surf_idle = pygame.transform.scale(raw_idle, idle_size)
         self.surf_idle = self.surf
 
-        # Carrega e escala a pose atirando
         raw_shoot = pygame.image.load('asset/cowgirl_shoot.png').convert_alpha()
         shoot_size = (int(raw_shoot.get_width() * scale), int(raw_shoot.get_height() * scale))
         self.surf_shoot = pygame.transform.scale(raw_shoot, shoot_size)

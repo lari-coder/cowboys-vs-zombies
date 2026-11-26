@@ -2,6 +2,7 @@ import pygame
 from code.Const import C_GOLD, ENTITY_DAMAGE, ENTITY_HEALTH, ENTITY_SPEED
 from code.Entity import Entity
 
+
 class Bullet(Entity):
     def __init__(self, position: tuple):
         self.name = 'Bullet'
