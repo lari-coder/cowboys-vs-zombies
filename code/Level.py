@@ -1,5 +1,5 @@
 import pygame
-
+import sys
 from code.Const import C_BLACK, C_GOLD, C_RED, C_WHITE, FPS, GAME_DURATION, SPAWN_TIME, STREET_TOP_Y, WIN_HEIGHT, WIN_WIDTH
 from code.Enemy import Enemy
 from code.Player import Player
@@ -42,6 +42,10 @@ class Level:
         self.window.blit(surf_t, (WIN_WIDTH - 140, 15))
 
     def run(self):
+        pygame.mixer.music.load("asset/LevelMusic.mp3")
+        pygame.mixer.music.set_volume(0.5)
+        pygame.mixer.music.play(-1)
+
         while True:
             self.clock.tick(FPS)
             self.window.blit(self.bg_surf, (0, 0))
@@ -49,7 +53,7 @@ class Level:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
-                    quit()
+                    sys.exit()
                 if event.type == self.SPAWN_EVENT:
                     self.enemies.append(Enemy())
                 if event.type == self.TIMER_EVENT:
@@ -96,6 +100,8 @@ class Level:
 
             # 6. Verifica Condições de Derrota e Vitória
             if self.player.health <= 0:
+                pygame.mixer.music.stop()
                 return "GAME_OVER"
             if self.time_left <= 0:
+                pygame.mixer.music.stop()
                 return "VICTORY"

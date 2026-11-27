@@ -1,9 +1,8 @@
 import pygame
-from code.Enemy import Enemy
+import sys
 from code.Level import Level
 from code.Menu import Menu
-from code.Player import Player
-from code.Const import C_BLACK, C_GOLD, C_GREEN, C_RED, C_WHITE, FPS, SPAWN_TIME, STREET_TOP_Y, WIN_HEIGHT, WIN_WIDTH
+from code.Const import C_BLACK, C_GOLD, C_GREEN, C_RED, C_WHITE, WIN_HEIGHT, WIN_WIDTH
 
 
 class Game:
@@ -39,13 +38,13 @@ class Game:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
-                    quit()
+                    sys.exit()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN:
                         return
                     if event.key == pygame.K_ESCAPE:
                         pygame.quit()
-                        quit()
+                        sys.exit()
 
     def run(self):
         while True:

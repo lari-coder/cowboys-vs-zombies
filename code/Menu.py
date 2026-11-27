@@ -1,4 +1,5 @@
 import pygame
+import sys
 from code.Const import C_BLACK, C_GOLD, C_GREEN, C_WHITE, WIN_HEIGHT, WIN_WIDTH
 
 
@@ -23,6 +24,10 @@ class Menu:
         self.window.blit(text_surf, text_rect)
 
     def run(self):
+        pygame.mixer.music.load("asset/MenuMusic.wav")
+        pygame.mixer.music.set_volume(0.5)
+        pygame.mixer.music.play(-1)
+
         while True:
             self.window.blit(self.bg_surf, (0, 0))
 
@@ -38,10 +43,11 @@ class Menu:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
-                    quit()
+                    sys.exit()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN:
+                        pygame.mixer.music.stop()
                         return "PLAY"
                     if event.key == pygame.K_ESCAPE:
                         pygame.quit()
-                        quit()
+                        sys.exit()
