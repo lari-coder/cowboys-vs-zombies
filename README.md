@@ -8,6 +8,12 @@ Jogo de ação e sobrevivência 2D em estilo pixel art desenvolvido em Python co
 
 Em uma cidade do velho oeste tomada por mortos-vivos, você assume o papel de uma cowgirl defendendo a rua principal. Seu objetivo é **sobreviver à horda de zumbis durante 60 segundos** antes que sua saúde chegue a zero.
 
+## 📸 Capturas de Tela
+
+| Menu Inicial | Gameplay |
+| :---: | :---: |
+| ![Menu Inicial](docs/menu.png) | ![Gameplay](docs/gameplay.png) |
+
 ### Regras e Mecânicas
 - **Sobrevivência:** O cronômetro regressivo inicia em `60s`. Sobreviver até o tempo zerar garante a **Vitória**.
 - **Combate:** Cada disparo acerta o zumbi à frente; se um zumbi encostar na cowgirl, ela perde pontos de saúde.
